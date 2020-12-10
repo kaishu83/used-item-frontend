@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import CarDataService from '../service/CarDataService'
+import './Car.css'
+
 
 export class Car extends Component {
 
@@ -6,43 +9,66 @@ export class Car extends Component {
         super(props)
         this.state = {
             id: this.props.match.params.id,
-            itemCondition: this.props.match.params.itemCondition,
-            make: this.props.match.params.make,
-            model: this.props.match.params.model,
-            mileage: this.props.match.params.mileage,
-            year: this.props.match.params.year,
-            price: this.props.match.params.price,
-            description: this.props.match.params.description,
-            email: this.props.match.params.email
+            car: []
         }
+
+        console.log(this.state.id)
+
+        this.refereshCarList = this.refereshCarList.bind(this)
+
+    }
+
+
+
+    componentDidMount() {
+        this.refereshCarList();
+    }
+
+    refereshCarList() {
+        CarDataService.findCarById(this.state.id)
+        .then(
+            response => {
+                this.setState({
+                    car: response.data,
+                })
+            }
+        )
     }
 
 
     render() {
         return (
-            <div>
-                 <div className="card" style={{backgroundColor: "white"}}>
-        <h3 style={{textAlign: "center"}}>{this.state.make} {this.state.model}</h3>
+            <div className="card w-75 mx-auto mt-5">
+                 <div className="" style={{backgroundColor: "white"}}>
+        <h3 style={{textAlign: "center"}}>{this.state.car.make} {this.state.car.model}</h3>
                 </div>
                 <div className="container">
                     <div>
                         <div>
-                            <lable>Condition</lable>
-                            <p className="form-control">{this.state.itemCondition} Hello</p>
+                            <label className="title">Description</label>
+                            <p className="">{this.state.car.description}</p>
+                        </div>
+                        <div>
+                            <label className="title">Condition</label>
+                            <p className="">{this.state.car.itemCondition}</p>
                         </div>
 
                         <div>
-                            <lable>Mileage</lable>
-                            <p className="form-control">{this.state.mileage}</p>                        </div>
+                            <label className="title" >Mileage</label>
+                            <p className="">{this.state.car.mileage}</p>                       
+                            </div>
                         <div>
-                            <lable>Year</lable>
-                            <p className="form-control">{this.state.year}</p>                        </div>
+                            <label className="title">Year</label>
+                            <p className="">{this.state.car.year}</p>                       
+                             </div>
                         <div>
-                            <lable>Price</lable>
-                            <p className="form-control">{this.state.price}</p>                        </div>
+                            <label className="title">Price</label>
+                            <p className="">$ {this.state.car.price}</p>                        
+                            </div>
                         <div>
-                            <lable>Contact</lable>
-                            <p className="form-control">{this.state.email}</p>                        </div>
+                            <label className="title">Contact</label>
+                            <p className="">{this.state.car.email}</p>                       
+                         </div>
                          </div>
                 </div>
             </div>
