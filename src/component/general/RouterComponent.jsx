@@ -6,7 +6,8 @@ import Home from '../home/Home'
 import HeaderComponent from '../header_footer/HeaderComponent'
 import CarTable from '../car/CarTable'
 import Car from '../car/Car'
-
+import Furniture from'../furniture/Furniture'
+import FurnitureTable from '../furniture/FurnitureTable'
 
 
 
@@ -24,6 +25,8 @@ class RouterComponent extends Component{
                 <Route path="/home" component={Home}/>
                 <Route path="/cars" component={CarTable}/>
                 <Route path="/car/:id" component={Car}/>
+                <Route path="/furniture/:id" component={Furniture}/>
+                <Route path="/furnitures" component={FurnitureTable}/>
                 </Switch>
                 </Router>
             </div>
