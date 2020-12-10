@@ -13,7 +13,7 @@ export class Home extends Component {
 
                     <div className="col">
                         <div className="card card-size">
-                            <Link>Electronics</Link>
+                            <Link to="/electronic">Electronics</Link>
                         </div>
                     </div>
 
