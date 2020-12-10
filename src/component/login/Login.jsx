@@ -2,6 +2,8 @@ import './Login.css';
 import {Link} from 'react-router-dom'
 import React from 'react'; 
 import image from '../../img/leaf.jpg'
+import UserDataService from '../service/UserDataService'
+
 
 
 class Login extends React.Component{
@@ -9,7 +11,62 @@ class Login extends React.Component{
 
     constructor(props){
         super(props)
+        this.state = {
+            username: '',
+            password: '',
+            user:[]
+        }
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmition = this.handleSubmition.bind(this)
     }
+
+
+    handleChange(event){
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    
+
+    retrieveUser(userCrendentials) {
+        UserDataService.userAuthentication(userCrendentials)
+        .then(
+            response => {
+                this.setState({
+                    user: response.data,
+                })
+            }
+        )
+    }
+
+    handleSubmition(event){
+
+        event.preventDefault();
+    
+           let userCrendentials = {
+                userName: this.state.userName,
+                password: this.state.password,
+               
+           }
+           //Add .then and route them to homepage
+           this.setState({
+                user: this.retrieveUser(userCrendentials)
+           }) 
+
+          const user = this.state.user[0]; 
+
+           if(user.id == 0){
+               console.log("Invalid Input")
+           }
+           else{
+               console.log("This was a valid password")
+           }
+
+
+
+       }
+    
 
 
     render(){

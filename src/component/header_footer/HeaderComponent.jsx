@@ -9,7 +9,7 @@ class HeaderComponent extends Component {
                     <ul className="navbar-nav">
                         <li><Link className="nav-link" to="/home">Home</Link></li>
                         <li><Link className="nav-link" to="/cars">Cars</Link></li>
-                        <li><Link className="nav-link" to="/">Furniture</Link></li>
+                        <li><Link className="nav-link" to="/furnitures">Furniture</Link></li>
                         <li><Link className="nav-link" to="/">Electronics</Link></li>
                         <li><Link className="nav-link" to="/">Sign Out</Link></li>
                     </ul>
