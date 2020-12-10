@@ -1,0 +1,17 @@
+.loginContainer {
+  background-color: white;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 300px;
+  width: 55%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.signUpBtn {
+  width: fit-content;
+}
