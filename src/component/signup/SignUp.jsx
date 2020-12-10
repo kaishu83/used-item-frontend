@@ -1,6 +1,8 @@
 import React from 'react'
 import './SignUp.css'
 import UserDataService from '../service/UserDataService'
+import {Link} from 'react-router-dom'
+
 
 class SignUp extends React.Component {
    
@@ -53,12 +55,12 @@ class SignUp extends React.Component {
 
                 <div className="form-group">
                 <label>Username</label>
-                <input className="form-control" name="userName" type="text" placeholder="username" onChange={this.handleChange}></input>
+                <input className="form-control" name="userName" type="text" placeholder="Username" onChange={this.handleChange}></input>
                 </div>
 
                 <div className="form-group">
                 <label>Password</label>
-                <input className="form-control" name="password" type="password" placeholder="password" onChange={this.handleChange}></input>
+                <input className="form-control" name="password" type="password" placeholder="Password" onChange={this.handleChange}></input>
                 </div>
 
                 <div className="form-group">
@@ -78,6 +80,9 @@ class SignUp extends React.Component {
                 <br/>
                 <input className="btn btn-primary m-3" type="submit" value="Sign Up"/>
             </form>
+
+            <Link to='/'>Already have an account? Login Here.</Link>
+
         </div>
         )
 }
