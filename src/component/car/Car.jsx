@@ -12,8 +12,6 @@ export class Car extends Component {
             car: []
         }
 
-        console.log(this.state.id)
-
         this.refereshCarList = this.refereshCarList.bind(this)
 
     }
