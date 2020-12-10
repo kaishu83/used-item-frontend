@@ -4,14 +4,21 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 300px;
-  width: 55%;
-  height: 80%;
+  max-width: 40%;
+  width: 450px;
+  height: 600px;
+  max-height: 70%;
   transform: translate(-50%, -50%);
   display: inline-flex;
-  overflow: hidden;
 }
 
 .signUpBtn {
   width: fit-content;
+}
+
+.login-banner img {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  background-position: center;
 }
