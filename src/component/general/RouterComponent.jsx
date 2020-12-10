@@ -23,7 +23,7 @@ class RouterComponent extends Component{
                 <Route path="/signup" component={SignUp}/>
                 <Route path="/home" component={Home}/>
                 <Route path="/cars" component={CarTable}/>
-                <Route path="/car" component={Car}/>
+                <Route path="/car/:id" component={Car}/>
                 </Switch>
                 </Router>
             </div>

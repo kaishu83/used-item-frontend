@@ -26,32 +26,15 @@ class CarTable extends Component {
         )
     }
 
-    // deleteEmployeeClicked(id, firstName, lastName) {
-    //     console.log('Delete Employee Clicked')
-    //     EmployeeDataService.deleteEmployee(id)
-    //     .then(
-    //         response => {
-    //             this.setState({message: `Deleted Employee: ${firstName} ${lastName}`})
-    //             alert(this.state.message)
-    //             this.refereshEmployeeRegistry(); 
-    //         }
-    //     )
-    // }
-    
-    // upDateEmployeeClicked(id, jobTitle) {
-    //     console.log('Update Employee Clicked')
-    //     this.props.history.push(`/employee/${id}/${jobTitle}`)
-    // }
-
-    viewCarClicked() {
-        this.props.history.push(`/car`)
+    viewCarClicked(id) {
+        this.props.history.push(`/car/${id}`)
     }
  
    render() {
        return(
            <div className="container">
                <h1 style={{textAlign:"center"}}>All Cars</h1><br></br>
-               <div className="jumbotron"  style={{backgroundColor: "gray", color: "white"}}>
+               <div className="jumbotron card"  style={{backgroundColor: "", color: "black"}}>
                    <table className="table">
                        <thead>
                            <tr style={{textAlign: "center" , color: "black"}}>
@@ -73,9 +56,7 @@ class CarTable extends Component {
                                        <td>{car.itemCondition}</td>
                                        <td>{car.mileage}</td>
                                        <td>{car.year}</td>
-                                       <td><button className="btn btn-success" 
-                                       onClick={() => this.viewCarClicked(car.id, car.make, car.model, car.itemCondition, car.milage, car.year, car.price, car.email)}>
-                                           View</button></td>
+                                       <td><button className="btn btn-success" onClick={() => this.viewCarClicked(car.id)}>View</button></td>
                                    </tr>
                                )
                            }
