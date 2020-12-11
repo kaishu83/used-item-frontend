@@ -22,11 +22,11 @@ class RouterComponent extends Component{
         return(
             <div>
                 <Router>
-                <HeaderComponent />
                     <Switch>
                 <Route exact path="/"><Login/></Route>
                 <Route path="/signup" component={SignUp}/>
-                <Route path="/home" component={Home}/>
+                <Route path="/users/:id" component={Home}/>
+                <Route path="/login" component={Login}/>
                 <Route path="/cars" component={CarTable}/>
                 <Route path="/car/:id" component={Car}/>
                 <Route path="/electronic/:id" component={Electronic}/>

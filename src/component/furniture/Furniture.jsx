@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import FurnitureDataService from '../service/FurnitureDataService';
 import "./Furniture.css"
+import HeaderComponent from '../header_footer/HeaderComponent'
+
 
 class Furniture extends Component{
     constructor(props){
@@ -29,6 +31,8 @@ class Furniture extends Component{
 
     render() {
         return (
+            <div>
+            <HeaderComponent id={this.props.location.userId}/>
             <div className="card w-75 mx-auto mt-5">
                  <div className="" style={{backgroundColor: "white"}}>
         <h3 style={{textAlign: "center"}}>{this.state.furniture.name}</h3>
@@ -62,6 +66,7 @@ class Furniture extends Component{
                          </div>
                          </div>
                 </div>
+            </div>
             </div>
         )
     }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import CarDataService from '../service/CarDataService'
+import HeaderComponent from '../header_footer/HeaderComponent'
+
 
 
 class CarTable extends Component {
@@ -27,12 +29,19 @@ class CarTable extends Component {
     }
 
     viewCarClicked(id) {
-        this.props.history.push(`/car/${id}`)
+        this.props.history.push({
+            pathname: `/car/${id}`,
+            userId: this.props.location.userId
+        })
     }
  
    render() {
-       return(
+       return(        
+           
+           <div>
+            <HeaderComponent id={this.props.location.userId}/>
            <div className="container">
+                 
                <h1 style={{textAlign:"center"}}>All Cars</h1><br></br>
                <div className="jumbotron card"  style={{backgroundColor: "", color: "black"}}>
                    <table className="table">
@@ -66,6 +75,7 @@ class CarTable extends Component {
                        <br/>
                    </div>
                </div>
+           </div>
            </div>
        )
    } 

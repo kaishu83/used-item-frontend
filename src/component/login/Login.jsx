@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom'
 import React from 'react'; 
 import image from '../../img/leaf.jpg'
 import UserDataService from '../service/UserDataService'
+import { withRouter } from 'react-router';
+
+
 
 
 
@@ -14,30 +17,16 @@ class Login extends React.Component{
         this.state = {
             username: '',
             password: '',
-            user:[]
+            user:{}
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmition = this.handleSubmition.bind(this)
     }
 
-
     handleChange(event){
         this.setState({
             [event.target.name]: event.target.value
         })
-    }
-
-    
-
-    retrieveUser(userCrendentials) {
-        UserDataService.userAuthentication(userCrendentials)
-        .then(
-            response => {
-                this.setState({
-                    user: response.data,
-                })
-            }
-        )
     }
 
     handleSubmition(event){
@@ -47,22 +36,38 @@ class Login extends React.Component{
            let userCrendentials = {
                 userName: this.state.userName,
                 password: this.state.password,
+           }
+
+           UserDataService.userAuthentication(userCrendentials)
+        .then(
+            response => {
+                this.setState({
+                    user: response.data,
+                },
+                () => {
+                    console.log(this.state.user)
+
+                    if(this.state.user.id == null){
+                        alert("Inavalid Username or Password")
+                    }
+                    else{
+                        this.props.history.push(`/users/${this.state.user.id}`)
+                    }
+         
+                }
                
-           }
-           //Add .then and route them to homepage
-           this.setState({
-                user: this.retrieveUser(userCrendentials)
-           }) 
+                )
+            }
+        )
+           
+        //    //Add .then and route them to homepage
+        //    this.setState({
+        //         user: this.retrieveUser(userCrendentials)
+        //    }, () => console.log(this.state.user)) 
 
-          const user = this.state.user[0]; 
+        //   const user = this.state.user; 
 
-           if(user.id == 0){
-               console.log("Invalid Input")
-           }
-           else{
-               console.log("This was a valid password")
-           }
-
+           
 
 
        }
@@ -98,4 +103,4 @@ class Login extends React.Component{
 
 }
 
-export default Login;
+export default withRouter(Login);
