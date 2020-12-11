@@ -78,18 +78,6 @@ export class Home extends Component {
 
                 <div className="row m-5">
                
-                <div className="col">
-                    <div className="card card-size">
-                        <Link>Create a Post</Link>
-                    </div>
-                </div>
-
-                <div className="col">
-                    <div className="card card-size">
-                        <Link>View Account Information</Link>
-                    </div>
-                </div>
-
                 </div>
 
                 </div>
