@@ -10,7 +10,7 @@ class HeaderComponent extends Component {
                         <li><Link className="nav-link" to="/home">Home</Link></li>
                         <li><Link className="nav-link" to="/cars">Cars</Link></li>
                         <li><Link className="nav-link" to="/furnitures">Furniture</Link></li>
-                        <li><Link className="nav-link" to="/">Electronics</Link></li>
+                        <li><Link className="nav-link" to="/electronic">Electronics</Link></li>
                         <li><Link className="nav-link" to="/">Sign Out</Link></li>
                     </ul>
                 </nav>

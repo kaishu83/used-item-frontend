@@ -29,9 +29,8 @@ class RouterComponent extends Component{
                 <Route path="/home" component={Home}/>
                 <Route path="/cars" component={CarTable}/>
                 <Route path="/car/:id" component={Car}/>
-                <Route path="/electronic" component={ElectronicTable}/>
                 <Route path="/electronic/:id" component={Electronic}/>
-
+                <Route path="/electronic" component={ElectronicTable}/>
                 <Route path="/furniture/:id" component={Furniture}/>
                 <Route path="/furnitures" component={FurnitureTable}/>
                 </Switch>
