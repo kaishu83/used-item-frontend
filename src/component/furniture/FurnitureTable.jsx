@@ -37,7 +37,7 @@ class FurnitureTable extends Component{
             <div className="jumbotron card" style={{backgroundColor: "", color: "black"}}>
                 <table className="table">
                     <tr style={{textAlign:"center",color:"black"}}>
-                              
+                               <th>Item Name</th>
                                <th>Condition</th>
                                <th>Year</th>
                                <th>Price</th>
@@ -48,6 +48,7 @@ class FurnitureTable extends Component{
                                this.state.furnitures.map (
                                    furniture => 
                                    <tr style={{textAlign: "center"}} key={furniture.id}>
+                                       <td>{furniture.name}</td>
                                        <td>{furniture.itemCondition}</td>
                                        <td>{furniture.year}</td>
                                        <td>{furniture.price}</td>

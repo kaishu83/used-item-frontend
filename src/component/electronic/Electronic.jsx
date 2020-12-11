@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ElectronicDataService from '../service/ElectronicsDataService'
+import ElectronicDataService from '../service/ElectronicDataService'
 import './Electronic.css'
 
 
@@ -12,7 +12,6 @@ export class Electronic extends Component {
             electronic: []
         }
 
-        console.log(this.state.id)
 
         this.refereshElectronicList = this.refereshElectronicList.bind(this)
 
@@ -24,7 +23,7 @@ export class Electronic extends Component {
         this.refereshElectronicList();
     }
 
-    refereshCarList() {
+    refereshElectronicList() {
         ElectronicDataService.findElectronicById(this.state.id)
         .then(
             response => {
@@ -40,7 +39,7 @@ export class Electronic extends Component {
         return (
             <div className="card w-75 mx-auto mt-5">
                  <div className="" style={{backgroundColor: "white"}}>
-        <h3 style={{textAlign: "center"}}>{this.state.electronic.make} {this.state.electronic.model}</h3>
+        <h3 style={{textAlign: "center"}}>{this.state.electronic.name}</h3>
                 </div>
                 <div className="container">
                     <div>

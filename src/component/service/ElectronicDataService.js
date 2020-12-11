@@ -1,8 +1,8 @@
 import axios from 'axios'; 
 
-class ElectronicsDataService{
+class ElectronicDataService{
 
-    retrieveAllElectronics(){
+    getAllElectronics(){
         return axios.get(`http://localhost:8080/electronic`)
     }
 
@@ -13,4 +13,4 @@ class ElectronicsDataService{
 
 }
 
-export default ElectronicsDataService;
+export default new ElectronicDataService;

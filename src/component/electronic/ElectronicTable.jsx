@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ElectronicsDataService from '../service/ElectronicsDataService'
+import ElectronicDataService from '../service/ElectronicDataService'
 
 
 class ElectronicTable extends Component {
@@ -16,7 +16,7 @@ class ElectronicTable extends Component {
     }
 
     refereshElectronicList() {
-        ElectronicsDataService.retrieveAllElectronics()
+        ElectronicDataService.getAllElectronics()
         .then(
             response => {
                 this.setState({
@@ -26,8 +26,9 @@ class ElectronicTable extends Component {
         )
     }
 
-    viewCarClicked(id) {
-        this.props.history.push(`/electroinc/${id}`)
+    viewElectronicClicked(id) {
+        console.log("HEREEEEEEEEEE")
+        this.props.history.push(`/electronic/${id}`)
     }
  
    render() {
@@ -52,9 +53,9 @@ class ElectronicTable extends Component {
                                    electronic => 
                                    <tr style={{textAlign: "center"}} key={electronic.id}>
                                        <td>{electronic.description}</td>
-                                       <td>{electronic.model}</td>
+                                       <td>{electronic.price}</td>
                                        <td>{electronic.itemCondition}</td>
-                                       <td>{electronic.manufacter}</td>
+                                       <td>{electronic.manufacture}</td>
                                        <td>{electronic.year}</td>
                                        <td><button className="btn btn-success" onClick={() => this.viewElectronicClicked(electronic.id)}>View</button></td>
                                    </tr>
