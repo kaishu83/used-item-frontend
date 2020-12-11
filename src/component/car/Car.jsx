@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import CarDataService from '../service/CarDataService'
 import './Car.css'
+import HeaderComponent from '../header_footer/HeaderComponent'
+
 
 
 export class Car extends Component {
@@ -36,6 +38,10 @@ export class Car extends Component {
 
     render() {
         return (
+
+            <div>
+            <HeaderComponent id={this.props.location.userId}/>
+            
             <div className="card w-75 mx-auto mt-5">
                  <div className="" style={{backgroundColor: "white"}}>
         <h3 style={{textAlign: "center"}}>{this.state.car.make} {this.state.car.model}</h3>
@@ -69,6 +75,7 @@ export class Car extends Component {
                          </div>
                          </div>
                 </div>
+            </div>
             </div>
         )
     }

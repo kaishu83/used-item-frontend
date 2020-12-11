@@ -7,7 +7,11 @@ class UserDataService{
     }
 
     userAuthentication(userCredentials){
-        return axios.get(`http://localhost:8080/authUsers`, userCredentials)
+        return axios.post(`http://localhost:8080/authUsers`, userCredentials)
+    }
+
+    findUserById(id){
+        return axios.get(`http://localhost:8080/users/${id}`)
     }
 
 }
