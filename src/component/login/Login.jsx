@@ -6,9 +6,6 @@ import UserDataService from '../service/UserDataService'
 import { withRouter } from 'react-router';
 
 
-
-
-
 class Login extends React.Component{
 
 
@@ -59,20 +56,11 @@ class Login extends React.Component{
                 )
             }
         )
-           
-        //    //Add .then and route them to homepage
-        //    this.setState({
-        //         user: this.retrieveUser(userCrendentials)
-        //    }, () => console.log(this.state.user)) 
+       
 
-        //   const user = this.state.user; 
-
-           
-
-
+    
        }
     
-
 
     render(){
         return(
