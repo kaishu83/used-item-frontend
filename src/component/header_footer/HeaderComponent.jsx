@@ -11,7 +11,7 @@ class HeaderComponent extends Component {
     render() {
         return(
             <header>
-                <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <ul className="navbar-nav">
                         <li><Link className="nav-link" to={'/users/' + this.props.id}>Home</Link></li>
                         <li><Link className="nav-link" to="/">Sign Out</Link></li>

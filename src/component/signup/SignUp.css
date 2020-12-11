@@ -1,12 +1,13 @@
 .signUpContainer {
   background-color: white;
   color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  /* position: absolute; */
+  /* top: 50%;
+  left: 50%; */
   max-width: 40%;
   width: 450px;
   height: fit-content;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   display: inline-flex;
 }
+

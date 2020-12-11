@@ -5,7 +5,7 @@ import RouterComponent from './component/general/RouterComponent'
 
 function App() {
   return (
-    <div className="App"> 
+    <div className="App bg"> 
       <RouterComponent/>
     </div>
   );

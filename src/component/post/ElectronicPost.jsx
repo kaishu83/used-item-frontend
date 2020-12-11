@@ -1,26 +1,23 @@
 import React from 'react'
 // import './SignUp.css'
 import UserDataService from '../service/UserDataService'
-import CarDataService from '../service/CarDataService'
+import ElectronicDataService from '../service/ElectronicDataService'
 import HeaderComponent from '../header_footer/HeaderComponent'
-
-
 import {Link} from 'react-router-dom'
 // import { withRouter } from 'react-router';
 
 
 
 
-class CarPost extends React.Component {
+class ElectronicPost extends React.Component {
    
    
    constructor(props){
        super(props)
        this.state = {
            itemCondition: 'NEW',
-           make: '',
-           model: '',
-           mileage: '',
+           manfacture: '',
+           name: '',
            year:'',
            price:'',
            description:'',
@@ -41,20 +38,19 @@ class CarPost extends React.Component {
    handleSubmition(event){
 
     event.preventDefault();
-       let car = {
+       let electronic = {
         itemCondition: this.state.itemCondition,
-        make: this.state.make,
-        model: this.state.model,
-        mileage: this.state.mileage,
+        manufacture: this.state.manufacture,
+        name: this.state.name,
         year: this.state.year,
         price: this.state.price,
         description: this.state.description,
         email: this.state.email
        }
        //Add .then and route them to homepage
-       CarDataService.createCarPost(car)
+       ElectronicDataService.createElectronicPost(electronic)
        this.props.history.push({
-        pathname: `/cars`,
+        pathname: `/electronic`,
         userId: this.props.location.userId
     })
 
@@ -72,24 +68,19 @@ class CarPost extends React.Component {
 
             <div className="signUpContainer card p-5 mt-3">
 
-            <h1>Car Post</h1>
+            <h1>Electronic Post</h1>
 
             <form onSubmit={this.handleSubmition} >
 
                 <div className="form-group">
-                <label>Make</label>
-                <input className="form-control" name="make" type="text" placeholder="Make" onChange={this.handleChange}></input>
+                <label>Item Name</label>
+                <input className="form-control" name="name" type="text" placeholder="Name" onChange={this.handleChange}></input>
                 </div>
 
                 <div className="form-group">
-                <label>Model</label>
-                <input className="form-control" name="model" type="text" placeholder="Model" onChange={this.handleChange}></input>
-                </div>
-
-                <div className="form-group">
-                <label>Mileage</label>
-                <input className="form-control" name="mileage" type="number" placeholder="Mileage" onChange={this.handleChange}></input>
-                </div>   
+                <label>Manufacturer Name</label>
+                <input className="form-control" name="manufacture" type="text" placeholder="Manufacturer Name" onChange={this.handleChange}></input>
+                </div>  
 
                 <div className="form-group">
                 <label>Year</label>
@@ -133,5 +124,5 @@ class CarPost extends React.Component {
 
 }
 
-export default CarPost;
+export default ElectronicPost;
 
