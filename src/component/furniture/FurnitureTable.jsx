@@ -1,6 +1,8 @@
 
 import React,{Component} from 'react'; 
 import FurnitureDataService from "../service/FurnitureDataService";
+import HeaderComponent from '../header_footer/HeaderComponent'
+
 
 
 class FurnitureTable extends Component{
@@ -25,12 +27,19 @@ class FurnitureTable extends Component{
         )
     }
     viewFurnitureClicked(id) {
-        this.props.history.push(`/furniture/${id}`)
+        this.props.history.push({
+            pathname: `/furniture/${id}`,
+            userId: this.props.location.userId
+        })
     }
 
 
     render(){
         return(
+
+        <div>
+        <HeaderComponent id={this.props.location.userId}/>
+
         <div className="container">
             <h1 style={{textAlign:"center"}}>All Furnitures</h1>
             <br></br>
@@ -59,6 +68,7 @@ class FurnitureTable extends Component{
                        </tbody>
                 </table>
             </div>
+        </div>
         </div>
         )
     }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ElectronicDataService from '../service/ElectronicDataService'
 import './Electronic.css'
+import HeaderComponent from '../header_footer/HeaderComponent'
+
 
 
 export class Electronic extends Component {
@@ -37,6 +39,9 @@ export class Electronic extends Component {
 
     render() {
         return (
+            <div>
+            <HeaderComponent id={this.props.location.userId}/>
+
             <div className="card w-75 mx-auto mt-5">
                  <div className="" style={{backgroundColor: "white"}}>
         <h3 style={{textAlign: "center"}}>{this.state.electronic.name}</h3>
@@ -70,6 +75,7 @@ export class Electronic extends Component {
                          </div>
                          </div>
                 </div>
+            </div>
             </div>
         )
     }

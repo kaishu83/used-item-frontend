@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import CarDataService from '../service/CarDataService'
+import HeaderComponent from '../header_footer/HeaderComponent'
+import {Link} from 'react-router-dom'
+
 
 
 class CarTable extends Component {
@@ -27,13 +30,30 @@ class CarTable extends Component {
     }
 
     viewCarClicked(id) {
-        this.props.history.push(`/car/${id}`)
+        this.props.history.push({
+            pathname: `/car/${id}`,
+            userId: this.props.location.userId
+        })
+    }
+
+    createCarClick(){
+        this.props.history.push({
+            pathname: `/carPost`,
+            userId: this.props.location.userId
+        })
     }
  
    render() {
-       return(
+       return(        
+           
+           <div>
+            <HeaderComponent id={this.props.location.userId}/>
            <div className="container">
+                 
                <h1 style={{textAlign:"center"}}>All Cars</h1><br></br>
+
+               <button onClick={() => this.createCarClick()} className="btn btn-primary m-3">Create Car Posting</button>
+
                <div className="jumbotron card"  style={{backgroundColor: "", color: "black"}}>
                    <table className="table">
                        <thead>
@@ -66,6 +86,7 @@ class CarTable extends Component {
                        <br/>
                    </div>
                </div>
+           </div>
            </div>
        )
    } 

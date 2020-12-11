@@ -2,6 +2,9 @@ import React from 'react'
 import './SignUp.css'
 import UserDataService from '../service/UserDataService'
 import {Link} from 'react-router-dom'
+import { withRouter } from 'react-router';
+
+
 
 
 class SignUp extends React.Component {
@@ -30,8 +33,7 @@ class SignUp extends React.Component {
 
    handleSubmition(event){
 
-    //event.preventDefault();
-
+    event.preventDefault();
        let user = {
             userName: this.state.userName,
             password: this.state.password,
@@ -41,6 +43,8 @@ class SignUp extends React.Component {
        }
        //Add .then and route them to homepage
        UserDataService.createUser(user)
+       this.props.history.push('/')
+
    }
 
    
@@ -91,5 +95,5 @@ class SignUp extends React.Component {
 
 }
 
-export default SignUp
+export default withRouter(SignUp);
 

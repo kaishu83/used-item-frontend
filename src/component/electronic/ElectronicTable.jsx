@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import ElectronicDataService from '../service/ElectronicDataService'
+import HeaderComponent from '../header_footer/HeaderComponent'
+
 
 
 class ElectronicTable extends Component {
@@ -27,13 +29,17 @@ class ElectronicTable extends Component {
     }
 
     viewElectronicClicked(id) {
-        console.log("HEREEEEEEEEEE")
-        this.props.history.push(`/electronic/${id}`)
+        this.props.history.push({
+            pathname: `/electronic/${id}`,
+            userId: this.props.location.userId
+        })
     }
  
    render() {
        return(
-           <div className="container">
+           <div>
+            <HeaderComponent id={this.props.location.userId}/>
+            <div className="container">
                <h1 style={{textAlign:"center"}}>All Electronics</h1><br></br>
                <div className="jumbotron card"  style={{backgroundColor: "", color: "black"}}>
                    <table className="table">
@@ -53,7 +59,7 @@ class ElectronicTable extends Component {
                                    electronic => 
                                    <tr style={{textAlign: "center"}} key={electronic.id}>
                                        <td>{electronic.description}</td>
-                                       <td>{electronic.price}</td>
+                                       <td>${electronic.price}</td>
                                        <td>{electronic.itemCondition}</td>
                                        <td>{electronic.manufacture}</td>
                                        <td>{electronic.year}</td>
@@ -68,6 +74,8 @@ class ElectronicTable extends Component {
                    </div>
                </div>
            </div>
+           </div>
+          
        )
    } 
 }

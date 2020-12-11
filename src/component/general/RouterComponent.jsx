@@ -10,6 +10,7 @@ import ElectronicTable from '../electronic/ElectronicTable.jsx'
 import Electronic from '../electronic/Electronic'
 import Furniture from'../furniture/Furniture'
 import FurnitureTable from '../furniture/FurnitureTable'
+import CarPost from '../post/CarPost'
 
 
 
@@ -22,13 +23,14 @@ class RouterComponent extends Component{
         return(
             <div>
                 <Router>
-                <HeaderComponent />
                     <Switch>
                 <Route exact path="/"><Login/></Route>
                 <Route path="/signup" component={SignUp}/>
-                <Route path="/home" component={Home}/>
+                <Route path="/users/:id" component={Home}/>
+                <Route path="/login" component={Login}/>
                 <Route path="/cars" component={CarTable}/>
                 <Route path="/car/:id" component={Car}/>
+                <Route path="/carPost" component={CarPost}/>
                 <Route path="/electronic/:id" component={Electronic}/>
                 <Route path="/electronic" component={ElectronicTable}/>
                 <Route path="/furniture/:id" component={Furniture}/>

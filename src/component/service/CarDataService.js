@@ -10,6 +10,10 @@ class CarDataService{
         return axios.get(`http://localhost:8080/cars/${id}`)
     }
 
+    createCarPost(car){
+        return axios.post(`http://localhost:8080/cars`, car)
+    }
+
 
 }
 
