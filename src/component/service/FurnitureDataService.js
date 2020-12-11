@@ -14,6 +14,9 @@ class FurnitureDataService{
         return axios.put(`http://localhost:8080/furniture/`,furniture)
     }
 
+    createFurniturePost(furniture){
+        return axios.post(`http://localhost:8080/furniture`, furniture)
+    }
 
 }
 

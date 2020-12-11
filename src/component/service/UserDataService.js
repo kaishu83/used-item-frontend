@@ -14,6 +14,10 @@ class UserDataService{
         return axios.get(`http://localhost:8080/users/${id}`)
     }
 
+    deleteUserById(id){
+        return axios.delete(`http://localhost:8080/users/${id}`)
+    }
+
 }
 
 export default new UserDataService;

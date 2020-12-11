@@ -50,7 +50,7 @@ class Furniture extends Component{
 
                         <div>
                             <label className="title" >Weight</label>
-                            <p className="">{this.state.furniture.weight}</p>                       
+                            <p className="">{this.state.furniture.weight} lbs</p>                       
                             </div>
                         <div>
                             <label className="title">Year</label>

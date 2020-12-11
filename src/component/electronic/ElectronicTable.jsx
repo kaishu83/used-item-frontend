@@ -34,6 +34,13 @@ class ElectronicTable extends Component {
             userId: this.props.location.userId
         })
     }
+
+    createElectronicClick(){
+        this.props.history.push({
+            pathname: `/electronicPost`,
+            userId: this.props.location.userId
+        })
+    }
  
    render() {
        return(
@@ -41,11 +48,14 @@ class ElectronicTable extends Component {
             <HeaderComponent id={this.props.location.userId}/>
             <div className="container">
                <h1 style={{textAlign:"center"}}>All Electronics</h1><br></br>
+
+               <button onClick={() => this.createElectronicClick()} className="btn btn-primary m-3">Create Electronics Posting</button>
+
                <div className="jumbotron card"  style={{backgroundColor: "", color: "black"}}>
                    <table className="table">
                        <thead>
                            <tr style={{textAlign: "center" , color: "black"}}>
-                               <th>Description</th>
+                               <th>Name</th>
                                <th>Price</th>
                                <th>Condition</th>
                                <th>Manufacturer</th>
@@ -58,7 +68,7 @@ class ElectronicTable extends Component {
                                this.state.electronics.map (
                                    electronic => 
                                    <tr style={{textAlign: "center"}} key={electronic.id}>
-                                       <td>{electronic.description}</td>
+                                       <td>{electronic.name}</td>
                                        <td>${electronic.price}</td>
                                        <td>{electronic.itemCondition}</td>
                                        <td>{electronic.manufacture}</td>

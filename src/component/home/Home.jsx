@@ -42,7 +42,11 @@ export class Home extends Component {
 
                     <HeaderComponent id={this.state.user.id}/>
 
-                 <h2>Welcome {this.state.user.firstName}</h2>
+
+
+
+                 <div className="card container bg-light mt-5">
+                 <h2 className="mt-3">Welcome {this.state.user.firstName}</h2>
 
                 <div className="row m-5">
                     <div className="col">
@@ -77,9 +81,16 @@ export class Home extends Component {
                 </div>
 
                 <div className="row m-5">
-               
+                <div className="col">
+                        <div className="card card-size">
+                        <Link to={{
+                              pathname: `/accountDetails/${this.state.user.id}`,
+                            }}
+                            >View Account Info</Link>
+                        </div>                        
                 </div>
-
+                </div>
+                </div>
                 </div>
                 
         )

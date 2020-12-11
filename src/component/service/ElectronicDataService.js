@@ -10,6 +10,10 @@ class ElectronicDataService{
         return axios.get(`http://localhost:8080/electronic/${id}`)
     }
 
+    createElectronicPost(electronic){
+        return axios.post(`http://localhost:8080/electronic`, electronic)
+    }
+
 
 }
 

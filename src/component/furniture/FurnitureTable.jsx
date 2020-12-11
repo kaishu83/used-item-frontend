@@ -33,6 +33,12 @@ class FurnitureTable extends Component{
         })
     }
 
+    createFurnitureClick(){
+        this.props.history.push({
+            pathname: `/furniturePost`,
+            userId: this.props.location.userId
+        })
+    }
 
     render(){
         return(
@@ -41,7 +47,10 @@ class FurnitureTable extends Component{
         <HeaderComponent id={this.props.location.userId}/>
 
         <div className="container">
-            <h1 style={{textAlign:"center"}}>All Furnitures</h1>
+            <h1 style={{textAlign:"center"}}>All Furniture</h1>
+             
+            <button onClick={() => this.createFurnitureClick()} className="btn btn-primary m-3">Create Furniture Posting</button>
+
             <br></br>
             <div className="jumbotron card" style={{backgroundColor: "", color: "black"}}>
                 <table className="table">
