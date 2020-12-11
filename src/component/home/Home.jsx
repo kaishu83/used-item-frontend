@@ -25,7 +25,7 @@ export class Home extends Component {
 
                   <div className="col">
                         <div className="card card-size">
-                        <Link>Furniture</Link>
+                        <Link to="/furnitures">Furniture</Link>
                         </div>                        
                 </div>
                 </div>
