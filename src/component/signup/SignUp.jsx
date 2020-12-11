@@ -51,7 +51,7 @@ class SignUp extends React.Component {
     render(){ 
         
         return (
-            <div className="signUpContainer card p-5">
+            <div className="signUpContainer card m-5 p-5">
 
             <h1>Sign Up</h1>
 
